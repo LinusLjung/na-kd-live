@@ -1,0 +1,36 @@
+[
+  {
+    "title": "Start screen",
+    "items": [
+      {
+        "title": "led_filmen",
+        "src": "led_filmen.mp4"
+      },
+      {
+        "title": "led_screen_offer",
+        "src": "led_screen_offer.mp4"
+      },
+      {
+        "title": "led_slideshow",
+        "src": "led_slideshow.mp4"
+      }
+    ]
+  },
+  {
+    "title": "Styling session #1",
+    "items": [
+      {
+        "src": "outfits/outfit_304.jpg"
+      },
+      {
+        "src": "outfits/outfit_306.jpg"
+      },
+      {
+        "src": "outfits/outfit_307.jpg"
+      },
+      {
+        "src": "outfits/outfit_308.jpg"
+      }
+    ]
+  }
+]
