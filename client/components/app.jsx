@@ -115,7 +115,9 @@ class App extends Component {
         <div
           style={ {
             display: 'flex',
-            flexWrap: 'wrap'
+            flexWrap: 'wrap',
+            overflowY: 'auto',
+            height: '100vh'
           } }
         >
           { data.map(this.renderGroup) }

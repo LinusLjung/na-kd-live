@@ -20,17 +20,90 @@
     "title": "Styling session #1",
     "items": [
       {
-        "src": "outfits/outfit_304.jpg"
+        "title": "Outfit 1 (319)",
+        "src": "outfits/outfit_319.jpg"
       },
       {
-        "src": "outfits/outfit_306.jpg"
+        "title": "Outfit 2 (308)",
+        "src": "outfits/outfit_308.jpg"
       },
       {
+        "title": "Outfit 3 (307)",
         "src": "outfits/outfit_307.jpg"
       },
       {
-        "src": "outfits/outfit_308.jpg"
+        "title": "Outfit 4 (310)",
+        "src": "outfits/outfit_310.jpg"
+      },
+      {
+        "title": "Outfit 5 (312)",
+        "src": "outfits/outfit_312.jpg"
+      },
+      {
+        "title": "Outfit 6 (311)",
+        "src": "outfits/outfit_311.jpg"
       }
     ]
+  },
+  {
+    "title": "Music act 1 - Elin",
+    "items": [
+      {
+        "src": "artister/elin.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Styling session #2",
+    "items": [
+      {
+        "title": "Outfit 7 (313)",
+        "src": "outfits/outfit_313.jpg"
+      },
+      {
+        "title": "Outfit 8 (322)",
+        "src": "outfits/outfit_322.jpg"
+      },
+      {
+        "title": "Outfit 9 (323)",
+        "src": "outfits/outfit_323.jpg"
+      },
+      {
+        "title": "Outfit 10 (321)",
+        "src": "outfits/outfit_321.jpg"
+      },
+      {
+        "title": "Outfit 11 (320)",
+        "src": "outfits/outfit_320.jpg"
+      },
+      {
+        "title": "Outfit 12 (318)",
+        "src": "outfits/outfit_318.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Music act 2 - Esther",
+    "items": [
+      {
+        "src": "artister/esther.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Styling session #3",
+    "items": []
+  },
+  {
+    "title": "Music act 3 - The Band",
+    "items": [
+      {
+        "src": "artister/maplerye.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Styling session #4",
+    "items": []
   }
 ]

@@ -25,8 +25,8 @@ class Screen extends Component {
     return (
       <div
         style={ Object.assign({}, this.props.style, {
-          width: '189px',
-          height: '288px',
+          width: '270px',
+          height: '405px',
           backgroundColor: 'black'
         }) }
       >
