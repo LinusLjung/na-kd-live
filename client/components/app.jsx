@@ -4,8 +4,6 @@ import data from '../data.json';
 
 const baseMediaUrl = "https://d21vejvoh8fjtd.cloudfront.net/static/NA-KD/shopdrop-stream/";
 
-console.log(data);
-
 class App extends Component {
   constructor() {
     super();
@@ -13,6 +11,7 @@ class App extends Component {
     this.renderGroup = this.renderGroup.bind(this);
     this.renderItem = this.renderItem.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
 
     this.state = {
       screenSrc: localStorage.getItem('screenSrc') && baseMediaUrl + localStorage.getItem('screenSrc'),
@@ -22,23 +21,52 @@ class App extends Component {
   }
 
   handleItemClick(e, src, itemIndex, groupIndex) {
-    e.preventDefault();
+    e && e.preventDefault();
     localStorage.setItem('itemIndex', itemIndex);
     localStorage.setItem('groupIndex', groupIndex);
 
-    if (e.button === 0) {
+    if (e && e.button === 0) {
       localStorage.setItem('screenSrc', src);
+
+      if (this.ws) {
+        this.ws.send(JSON.stringify({
+          event: 'itemClick',
+          src: src,
+          itemIndex,
+          groupIndex
+        }));
+      }
     } else {
       localStorage.setItem('previewSrc', src);
     }
 
-    this.setState(Object.assign({}, e.button === 0 ? {
+    this.setState(Object.assign({}, !e || e.button === 0 ? {
       itemIndex,
       groupIndex,
       screenSrc: baseMediaUrl + src,
     } : {
       previewSrc: baseMediaUrl + src,
     }));
+  }
+
+  handleFormSubmit(e) {
+    e.preventDefault();
+
+    this.ws = new WebSocket('ws://' + e.target.host.value + ':8081');
+
+    e.target.host.value = '';
+
+    this.ws.onmessage = function (message) {
+      const data = JSON.parse(message.data);
+
+      console.log(data);
+
+      switch (data.event) {
+        case 'itemClick':
+          this.handleItemClick(null, data.src, data.itemIndex, data.groupIndex);
+          break;
+      }
+    }.bind(this);
   }
 
   renderGroup({ title, items }, groupIndex) {
@@ -121,6 +149,19 @@ class App extends Component {
           } }
         >
           { data.map(this.renderGroup) }
+
+          <div
+            style={ {
+              flexBasis: '100%'
+            } }
+          >
+            <form onSubmit={ this.handleFormSubmit }>
+              <label htmlFor='host'>Host</label>
+              <input id='host' type='text' name='host' />
+
+              <input type='submit' style={ { display: 'none' } } />
+            </form>
+          </div>
         </div>
       </div>
     );

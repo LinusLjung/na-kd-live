@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "server": "node server",
     "dev": "webpack-dev-server"
   },
   "author": "Linus Ljung <linus.ljung@outlook.com>",
@@ -20,5 +21,8 @@
     "redux": "^3.7.2",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
+  },
+  "dependencies": {
+    "ws": "^3.1.0"
   }
 }
